@@ -26,7 +26,8 @@ public class HelloWorldController {
 			logger.debug("logging is here !");
 		}
 
-		logger.info("here !!! is executed!");
+        logger.info("here !!! is executed!");
+        logger.info("here !!! is executed!!");
         ModelAndView mav = new ModelAndView("index");
         mav.addObject("siteName", this.siteName);
         return mav;

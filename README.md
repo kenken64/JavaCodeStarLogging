@@ -125,3 +125,15 @@ initial_position = end_of_file
 log_group_name = Java_App_Logs
 
 ```
+
+After configure restart the clodwatch daemon
+
+```
+sudo service awslogs restart
+```
+
+To view the configure aws cloduwatch
+
+```
+sudo more /var/awslogs/etc/awslogs.conf
+```
