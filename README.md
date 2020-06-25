@@ -104,3 +104,24 @@ should also regularly review and apply any available patches or associated secur
 advisories for dependencies used within your application.
 
 Best Practices: https://docs.aws.amazon.com/codestar/latest/userguide/best-practices.html?icmpid=docs_acs_rm_sec
+
+## Setup CloudWatch monitor the Java Log4j logging
+
+```
+$ sudo wget http://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
+$ sudo chmod +x awslogs-agent-setup.py
+$ sudo python ./awslogs-agent-setup.py --region=ap-southeast-2
+```
+
+Follow the wizard setup make sure all the settings are correct as below
+
+```
+[/home/ec2-user/javaapp/myapp.log]
+datetime_format = %Y-%m-%d %H:%M:%S
+file = /home/ec2-user/javaapp/myapp.log
+buffer_duration = 5000
+log_stream_name = {instance_id}
+initial_position = end_of_file
+log_group_name = Java_App_Logs
+
+```
